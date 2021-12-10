@@ -56,7 +56,12 @@ if __name__ == '__main__':
                         E += 1
                     else: 
                         M += 1
+
+
+                
             print(f"M: {M}, E: {E}")
             count += 1
             print(f"Attempts: {count}")
-    
+            if E == 4:
+                print(f"Congrats! You have guessed the right number in {count} attempts.")
+                break
