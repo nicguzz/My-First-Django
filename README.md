@@ -8,7 +8,9 @@
 > Guess 4 digit numbers
 - **Hotel**
 > Mini Hotel Reservation System
-- **Libreria**
+- **Bookshop**
 > How to collect data from a Json file, edit it, add new data, and search by some filters.
 - **User_Auth**
 > Create an account with an username, password, encrypt password, modify password.
+- **My_First_Django**
+> Create a list with a simple food order, I am still developing to use SQL and performing more functions.
