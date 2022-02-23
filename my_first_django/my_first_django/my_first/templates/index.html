@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "./base.html" %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,8 @@
 
 </head>
 <body>
-
+    {% block body %}
+    
     <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Hello! Welcome to to Nic Bar!</h1>
     
     <h2 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Please check the menu:</h2>
@@ -19,19 +20,23 @@
     <img src="https://cdn-icons-png.flaticon.com/512/1046/1046786.png"  style="width:128px;height:128px; margin-left: 1cm;">
     <img src="https://cdn-icons-png.flaticon.com/512/1497/1497038.png"  style="width:128px;height:128px; margin-left: 1cm;">
     
-
+    <p></p>
     {% for key, value in meals.items %}
     
     <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">{{key}}: {{value}} €</p>
-
-
+    
+    
     
     {% endfor %}
 
-    <h3 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 2cm; height: 2cm;"><button><a href="form" style="background-color: lightblue" style="color: white;" > Order here</a></button>
+    <h3 style="margin-left: 5cm;">
+        <a href="form" style="color: white;"><button type="button" class="btn btn-primary btn-lg" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 2cm; height: 2cm;">Order here</a></button>
+
     </h3>
+
+    {% endblock %}
     
     
 </body>
-</html>
+
 
