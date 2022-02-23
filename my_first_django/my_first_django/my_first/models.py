@@ -11,6 +11,7 @@ class Order(models.Model):
             ('Salmon tartar', 'Salmon tartar')
     )
 
+    id = models.BigIntegerField(primary_key=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()

@@ -35,3 +35,9 @@ def new_order(request):
     data['form'] = form
 
     return render(request, 'form.html', data)
+
+def delete(request, id):
+    curso = Order.objects.get(id=id)
+    curso.delete()
+
+    return redirect('list')
