@@ -25,6 +25,13 @@ def list(request):
 
     return render(request, 'list.html', data)
 
+def list2(request):
+    data = {}
+    data['list'] = Order.objects.all()
+
+    return render(request, 'list.html', data)
+
+
 def new_order(request):
     data = {}
     form = TransacaoForm(request.POST or None)
@@ -36,8 +43,29 @@ def new_order(request):
 
     return render(request, 'form.html', data)
 
+def order2(request):
+    id = request.POST['id_form']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    age = request.POST['age']
+    meal = request.POST['meal']
+    curso = Order.objects.create(id=id, first_name=first_name, last_name=last_name, age=age, meal=meal)
+
+    return redirect('/list2')
+
 def delete(request, id):
     curso = Order.objects.get(id=id)
     curso.delete()
 
     return redirect('list')
+
+def edit(request, id):
+    curso = Order.objects.get(id=id)
+
+    return render(request, "edit.html", {"curso": curso})
+
+
+def edited(request):
+    # codigo
+    return redirect('list')
+

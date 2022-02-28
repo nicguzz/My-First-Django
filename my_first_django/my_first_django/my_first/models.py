@@ -1,5 +1,5 @@
 from django.db import models
-from django.forms import CharField
+from django.forms import CharField, ChoiceField
 
 class Order(models.Model):
     MEALS = (
@@ -16,3 +16,4 @@ class Order(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.IntegerField()
     meal = models.TextField(max_length=20, choices=MEALS)
+    

@@ -1,7 +1,6 @@
 {% extends "./base.html" %}
 
 {% block body %}
-<body>
     
     <h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
     New Order:
@@ -14,7 +13,36 @@
     <button type="submit">Save </button>
 </form>
 
-</body>
-
-{% endblock %}
+<div class="row">
+    <div class="col-sm-12 col-md-6 col-lg4 col-xl-4">
+        <h2>Order 2 test</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="list2" method="POST"> {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" id="id_form" name="id_form" class="form-control" placeholder="ID" minlength="1" maxlength="10" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name" maxlength="10" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last name" maxlength="10" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="age" name="age" class="form-control" placeholder="Age" max="3" min="1" value="1" maxlength="3" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="meal" name="meal" class="form-control" placeholder="Meal" maxlength="15" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block text-white">Save</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    </div>
+        
+        {% endblock %}
 </html>
