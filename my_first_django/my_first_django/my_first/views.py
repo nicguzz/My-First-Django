@@ -66,6 +66,18 @@ def edit(request, id):
 
 
 def edited(request):
-    # codigo
+    id = request.POST['id_form']
+    first_name = request.POST['first_name']
+    last_name = request.POST['last_name']
+    age = request.POST['age']
+    meal = request.POST['meal']
+
+    curso = Order.objects.get(id=id)
+    curso.first_name = first_name
+    curso.last_name = last_name
+    curso.age = age
+    curso.meal = meal
+    curso.save()
+
     return redirect('list')
 
