@@ -8,6 +8,6 @@ urlpatterns = [
     path('edit/<id>', views.edit, name='edit'),
     path('edited', views.edited, name='edited'),
     path('delete/<id>', views.delete),
-    path('list2', views.list2, name='list2')
+    path('order2', views.order2, name = 'order2')
 
 ]

@@ -1,7 +1,7 @@
-from cgitb import html
 from django.shortcuts import redirect, render
 from .models import Order
 from .form import TransacaoForm
+
 
 meals = {
     "Cheeseburguer": 10,
@@ -25,13 +25,6 @@ def list(request):
 
     return render(request, 'list.html', data)
 
-def list2(request):
-    data = {}
-    data['list'] = Order.objects.all()
-
-    return render(request, 'list.html', data)
-
-
 def new_order(request):
     data = {}
     form = TransacaoForm(request.POST or None)
@@ -41,7 +34,8 @@ def new_order(request):
 
     data['form'] = form
 
-    return render(request, 'form.html', data)
+    return render(request, 'form.html', {'data':data, 'meals':meals})
+
 
 def order2(request):
     id = request.POST['id_form']
@@ -51,7 +45,7 @@ def order2(request):
     meal = request.POST['meal']
     curso = Order.objects.create(id=id, first_name=first_name, last_name=last_name, age=age, meal=meal)
 
-    return redirect('/list2')
+    return redirect('list')
 
 def delete(request, id):
     curso = Order.objects.get(id=id)

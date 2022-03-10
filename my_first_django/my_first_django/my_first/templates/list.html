@@ -17,6 +17,7 @@
         <th scope="col">Last name</th>
         <th scope="col">Age</th>
         <th scope="col">Meal</th>
+        <th scope="col">Price</th>
 
       </tr>
     </thead>
@@ -30,7 +31,8 @@
         <td>{{ item.first_name }}</td>
         <td>{{ item.last_name}}</td>
         <td>{{ item.age}}</td>
-        <td>{{ item.meal}}</td>
+        <td>{{item.meal}}</td>
+        <td>Price(To be set yet)</td>
         <td> <a href="edit/{{item.id}}" class="btn btn-info">Edit</a></td>
         <td> <a href="delete/{{item.id}}" class="btn btn-danger">Delete</a></td>
 
