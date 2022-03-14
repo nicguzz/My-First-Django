@@ -7,7 +7,7 @@
 - **Game**
 > Guess 4 digit numbers
 - **Hotel**
-> Mini Hotel Reservation System
+> Mini Hotel Reservation System, using JSON files as database.
 - **Bookshop**
 > How to collect data from a Json file, edit it, add new data, and search by some filters.
 - **User_Auth**
