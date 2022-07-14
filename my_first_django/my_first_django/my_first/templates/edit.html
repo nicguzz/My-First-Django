@@ -1,0 +1,35 @@
+{% extends "./base.html" %}
+{% block body %}
+<div class="row">
+<div class="col-md4 offset-md-4">
+    <h2>Edit</h2>
+    <div class="card">
+        <div class="card-body">
+            <form action="/edited" method="POST"> {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="id_form" name="id_form" value={{curso.id}} class="form-control" readonly placeholder="ID" minlength="1" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="first_name" name="first_name" value={{curso.first_name}} class="form-control" placeholder="First name" maxlength="10" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="last_name" name="last_name" value={{curso.last_name}} class="form-control" placeholder="Last name" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="age" name="age" class="form-control" value={{curso.age}} placeholder="Age" max="3" min="1" value="1" maxlength="3" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="meal" name="meal" class="form-control" value={{curso.meal}} placeholder="Meal" maxlength="15" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block text-white">Save</button>
+            </div>
+        </form>
+
+</div>
+
+
+</div>
+
+{% endblock %}

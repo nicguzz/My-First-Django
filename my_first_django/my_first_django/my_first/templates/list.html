@@ -1,0 +1,46 @@
+{% extends "./base.html" %}
+<body>
+    
+    <h1>
+        <button style="width: 2cm; height: 1cm;" ><a href="{% url 'index' %}">Home</a></button>
+    </h1>
+    
+    {% block body %}
+    
+<h1 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">List:</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Meal</th>
+        <th scope="col">Price</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {% for item in list %}
+
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.first_name }}</td>
+        <td>{{ item.last_name}}</td>
+        <td>{{ item.age}}</td>
+        <td>{{item.meal}}</td>
+        <td>Price(To be set yet)</td>
+        <td> <a href="edit/{{item.id}}" class="btn btn-info">Edit</a></td>
+        <td> <a href="delete/{{item.id}}" class="btn btn-danger">Delete</a></td>
+
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+{% endblock %}
